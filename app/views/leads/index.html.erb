@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 ">
+      <h3>New Prospects</h3>
+      <% @leads.each do |lead| %>
+        <% if lead.status == "New Prospect" %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">
+              <%= lead.first_name %> <%= lead.last_name %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= lead.line_of_business %>
+            </h6>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lead Info
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item"> <strong>Phone:</strong> <%= lead.phone %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Email:</strong> <%= lead.email %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Status:</strong> <%= lead.status %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Agent:</strong> <%= lead.agent %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Date Added:</strong> <%= lead.date_added.strftime("%B %d, %Y") if lead.date_added %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Last Update:</strong> <%= lead.last_update.strftime("%B %d, %Y") if lead.last_update %></a></li>
+              <br></a></li>
+              <li><a class="dropdown-item"> <strong>Notes:</strong> <%= lead.notes %></a></li>
+              
+            </ul>
+  
+            </p>
+            <a href="<%= edit_lead_path(lead) %>" class="btn btn-primary">Edit </a>
+            <a><%= button_to "Delete", lead_path(lead), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </a>
+              </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-2">
+      <h3>Contacted</h3>
+      <% @leads.each do |lead| %>
+        <% if lead.status == "Contacted" %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">
+              <%= lead.first_name %> <%= lead.last_name %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= lead.line_of_business %>
+            </h6>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lead Info
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item"> <strong>Phone:</strong> <%= lead.phone %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Email:</strong> <%= lead.email %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Status:</strong> <%= lead.status %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Agent:</strong> <%= lead.agent %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Date Added:</strong> <%= lead.date_added.strftime("%B %d, %Y") if lead.date_added %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Last Update:</strong> <%= lead.last_update.strftime("%B %d, %Y") if lead.last_update %></a></li>
+              <br></a></li>
+              <li><a class="dropdown-item"> <strong>Notes:</strong> <%= lead.notes %></a></li>
+              
+            </ul>
+  
+            </p>
+        
+            <a href="<%= edit_lead_path(lead) %>" class="btn btn-primary">Edit</a>
+            <%= button_to "Delete", lead_path(lead), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </a>
+              </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-2">
+      <h3>Needs Quote</h3>
+      <% @leads.each do |lead| %>
+        <% if lead.status == "Needs Quote" %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">
+              <%= lead.first_name %> <%= lead.last_name %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= lead.line_of_business %>
+            </h6>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lead Info
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item"> <strong>Phone:</strong> <%= lead.phone %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Email:</strong> <%= lead.email %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Status:</strong> <%= lead.status %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Agent:</strong> <%= lead.agent %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Date Added:</strong> <%= lead.date_added.strftime("%B %d, %Y") if lead.date_added %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Last Update:</strong> <%= lead.last_update.strftime("%B %d, %Y") if lead.last_update %></a></li>
+              <br></a></li>
+              <li><a class="dropdown-item"> <strong>Notes:</strong> <%= lead.notes %></a></li>
+              
+            </ul>
+  
+            </p>
+          
+            <a href="<%= edit_lead_path(lead) %>" class="btn btn-primary">Edit</a>
+            <%= button_to "Delete", lead_path(lead), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </a>
+              </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-2">
+      <h3>Presented</h3>
+      <% @leads.each do |lead| %>
+        <% if lead.status == "Presented" %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">
+              <%= lead.first_name %> <%= lead.last_name %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= lead.line_of_business %>
+            </h6>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lead Info
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item"> <strong>Phone:</strong> <%= lead.phone %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Email:</strong> <%= lead.email %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Status:</strong> <%= lead.status %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Agent:</strong> <%= lead.agent %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Date Added:</strong> <%= lead.date_added.strftime("%B %d, %Y") if lead.date_added %><br></a></li>
+              <li><a class="dropdown-item"> <strong>Last Update:</strong> <%= lead.last_update.strftime("%B %d, %Y") if lead.last_update %></a></li>
+              <br></a></li>
+              <li><a class="dropdown-item"> <strong>Notes:</strong> <%= lead.notes %></a></li>
+              
+            </ul>
+  
+            </p>
+            
+            <a href="<%= edit_lead_path(lead) %>" class="btn btn-primary">Edit</a>
+            <%= button_to "Delete", lead_path(lead), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </a>
+              </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+
+
+
+<%= link_to "New lead", new_lead_path %>
